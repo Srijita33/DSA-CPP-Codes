@@ -34,10 +34,10 @@ public:
             return mergedInterval;
         sort(intervals.begin(),intervals.end());
         vector<int> tempIntv=intervals[0];
-        for(auto it:intervals){
+        for(auto it:intervals){//if merge
             if(it[0]<=tempIntv[1]){
                 tempIntv[1]=max(tempIntv[1],it[1]);
-            }else{
+            }else{ //if not merge case
                 mergedInterval.push_back(tempIntv);
                 tempIntv=it;
             }
